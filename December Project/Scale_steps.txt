@@ -1,0 +1,11 @@
+Chromatic (Free Play): R, H, H, H, H, H, H, H, H, H, H, H, H
+Major: R, W, W, H, W, W, W, H
+Minor: R, W, H, W, W, H, 1 1/2, H
+Blues: R, 1 1/2, W, H, H, 1 1/2, W
+Minor pentatonic blues: R, 1 1/2, W, W, 1 1/2, W
+Major pentatonic: R, W, W, 1 1/2, W, 1 1/2
+Minor Pentatonic: R, 1 1/2, W, W, 1 1/2, W
+Melodic Minor: R, W, H, W, W, W, W, H
+Dorian Mode: R, W, H, W, W, W, H, W
+Mixolydian Mode: R, W, W, H, W, W, H, W
+Ahava Raba Mode: R, H, 1 1/2, H, W, H, W, W
