@@ -129,7 +129,7 @@ def main():
                 brect = calc_bounding_rect(debug_image, hand_landmarks)
                 # Landmark calculation
                 landmark_list = calc_landmark_list(debug_image, hand_landmarks)
-
+                print("Landmark List:", landmark_list[8])
                 # Conversion to relative coordinates / normalized coordinates
                 pre_processed_landmark_list = pre_process_landmark(
                     landmark_list)
