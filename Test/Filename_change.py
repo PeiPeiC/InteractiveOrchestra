@@ -1,24 +1,43 @@
 import os
 
-def edit_filenames(directory_path):
-    d = {"C": 1, "C#": 2, "D": 3, "D#": 4, "E": 5, "F": 6, "F#": 7, "G": 8, "G#": 9, "A": 10, "A#": 11, "B": 12}
+number_to_note =  {1: '0A', 2: '0A#', 3: '0B', 4: '1C',
+ 5: '1C#', 6: '1D', 7: '1D#', 8: '1E', 9: '1F', 10: '1F#', 11: '1G', 12: '1G#', 13: '1A', 14: '1A#', 15: '1B', 16: '2C',
+ 17: '2C#', 18: '2D', 19: '2D#', 20: '2E', 21: '2F', 22: '2F#', 23: '2G', 24: '2G#', 25: '2A', 26: '2A#', 27: '2B', 28: '3C',
+  29: '3C#', 30: '3D', 31: '3D#', 32: '3E', 33: '3F', 34: '3F#', 35: '3G', 36: '3G#', 37: '3A', 38: '3A#', 39: '3B', 40: '4C',
+   41: '4C#', 42: '4D', 43: '4D#', 44: '4E', 45: '4F', 46: '4F#', 47: '4G', 48: '4G#', 49: '4A', 50: '4A#', 51: '4B', 52: '5C',
+    53: '5C#', 54: '5D', 55: '5D#', 56: '5E', 57: '5F', 58: '5F#', 59: '5G', 60: '5G#', 61: '5A', 62: '5A#', 63: '5B', 64: '6C',
+     65: '6C#', 66: '6D', 67: '6D#', 68: '6E', 69: '6F', 70: '6F#', 71: '6G', 72: '6G#', 73: '6A', 74: '6A#', 75: '6B', 76: '7C',
+      77: '7C#', 78: '7D', 79: '7D#', 80: '7E', 81: '7F', 82: '7F#', 83: '7G', 84: '7G#', 85: '7A', 86: '7A#', 87: '7B', 88: '8C'}
 
+note_to_number = {'0A': 1, '0A#': 2, '0B': 3, '1C': 4,
+ '1C#': 5, '1D': 6, '1D#': 7, '1E': 8, '1F': 9, '1F#': 10, '1G': 11, '1G#': 12, '1A': 13, '1A#': 14, '1B': 15,
+  '2C': 16, '2C#': 17, '2D': 18, '2D#': 19, '2E': 20, '2F': 21, '2F#': 22, '2G': 23, '2G#': 24, '2A': 25, '2A#': 26, '2B': 27,
+   '3C': 28, '3C#': 29, '3D': 30, '3D#': 31, '3E': 32, '3F': 33, '3F#': 34, '3G': 35, '3G#': 36, '3A': 37, '3A#': 38, '3B': 39,
+    '4C': 40, '4C#': 41, '4D': 42, '4D#': 43, '4E': 44, '4F': 45, '4F#': 46, '4G': 47, '4G#': 48, '4A': 49, '4A#': 50, '4B': 51,
+     '5C': 52, '5C#': 53, '5D': 54, '5D#': 55, '5E': 56, '5F': 57, '5F#': 58, '5G': 59, '5G#': 60, '5A': 61, '5A#': 62, '5B': 63,
+      '6C': 64, '6C#': 65, '6D': 66, '6D#': 67, '6E': 68, '6F': 69, '6F#': 70, '6G': 71, '6G#': 72, '6A': 73, '6A#': 74, '6B': 75,
+      '7C': 76, '7C#': 77, '7D': 78, '7D#': 79, '7E': 80, '7F': 81, '7F#': 82, '7G': 83, '7G#': 84, '7A': 85, '7A#': 86, '7B': 87, '8C': 88}
+
+
+
+
+
+def edit_filenames(directory_path):
 
     for filename in os.listdir(directory_path):
         # Split the filename into the number and the rest of the name
-        parts = filename.split("ff-0")[1]
+        num = filename.split("-")[1].split(".")[0]
 
+        print(num)
 
+        new_filename = str(note_to_number[num]) + "-" + num + ".wav"
 
-        note_number = int(number)*12 + d[letter]
-            
-        # Create the new filename with the number first
-        new_filename = f"{note_number}-{number}{letter}.wav"
         print(new_filename)
-        # Rename the file
-        #os.rename(os.path.join(directory_path, filename), os.path.join(directory_path, new_filename))
 
-#edit_filenames("C:/Users/adamf/PycharmProjects/Visual Studio/Test/Violin")
+        # Rename the file
+        os.rename(os.path.join(directory_path, filename), os.path.join(directory_path, new_filename))
+
+edit_filenames(r"C:\Users\adamf\PycharmProjects\Visual Studio\IO project\InteractiveOrchestra\Test\Violin")
 
 
 
@@ -47,138 +66,6 @@ def print_note_number(directory_path):
         note_n[note_number] = filename.replace(".wav", "")
 
     return note_n
-        #print(f"number: {int(number)}, letter: {letter}, note number: {note_number}")
+    #print(f"number: {int(number)}, letter: {letter}, note number: {note_number}")
 
 #note_dict = (print_note_number("C:/Users/adamf/PycharmProjects/Visual Studio/Test/Violin"))
-
-
-
-
-def switch_dict_keys_values(d):
-    return {v: k for k, v in d.items()}
-
-
-order = {44: '3G', 45: '3G#', 46: '3A', 47: '3A#', 48: '3B',
- 49: '4C', 50: '4C#', 51: '4D', 52: '4D#', 53: '4E', 54: '4F',
-  56: '4G', 57: '4G#', 58: '4A', 59: '4A#', 60: '4B', 61: '5C', 62: '5C#',
-   63: '5D', 64: '5D#', 65: '5E', 66: '5F', 67: '5F#', 68: '5G', 69: '5G#', 70: '5A', 71: '5A#', 72: '5B',
-    73: '6C', 74: '6C#', 75: '6D', 76: '6D#', 77: '6E', 78: '6F', 79: '7F#', 80: '6G'}
-
-print(switch_dict_keys_values(order))
-
-
-d = {"C": 1, "C#": 2, "D": 3, "D#": 4, "E": 5, "F": 6, "F#": 7, "G": 8, "G#": 9, "A": 10, "A#": 11, "B": 12}
-
-piano_dict = {}
-for i in range(0, 9):
-    for note in d:
-        key_num = i*12 + d[note]
-        if i == 0 and note == "A":
-            piano_dict[f"{i}{note}"] = 0
-        else:
-            piano_dict[f"{i}{note}"] = key_num - 8
-
-print(piano_dict)
-# BEGIN: 8f7e4d3b9w3d
-piano_dict = {
-    1: "A0",
-    2: "A#0",
-    3: "B0",
-    4: "C1",
-    5: "C#1",
-    6: "D1",
-    7: "D#1",
-    8: "E1",
-    9: "F1",
-    10: "F#1",
-    11: "G1",
-    12: "G#1",
-    13: "A1",
-    14: "A#1",
-    15: "B1",
-    16: "C2",
-    17: "C#2",
-    18: "D2",
-    19: "D#2",
-    20: "E2",
-    21: "F2",
-    22: "F#2",
-    23: "G2",
-    24: "G#2",
-    25: "A2",
-    26: "A#2",
-    27: "B2",
-    28: "C3",
-    29: "C#3",
-    30: "D3",
-    31: "D#3",
-    32: "E3",
-    33: "F3",
-    34: "F#3",
-    35: "G3",
-    36: "G#3",
-    37: "A3",
-    38: "A#3",
-    39: "B3",
-    40: "C4",
-    41: "C#4",
-    42: "D4",
-    43: "D#4",
-    44: "E4",
-    45: "F4",
-    46: "F#4",
-    47: "G4",
-    48: "G#4",
-    49: "A4",
-    50: "A#4",
-    51: "B4",
-    52: "C5",
-    53: "C#5",
-    54: "D5",
-    55: "D#5",
-    56: "E5",
-    57: "F5",
-    58: "F#5",
-    59: "G5",
-    60: "G#5",
-    61: "A5",
-    62: "A#5",
-    63: "B5",
-    64: "C6",
-    65: "C#6",
-    66: "D6",
-    67: "D#6",
-    68: "E6",
-    69: "F6",
-    70: "F#6",
-    71: "G6",
-    72: "G#6",
-    73: "A6",
-    74: "A#6",
-    75: "B6",
-    76: "C7",
-    77: "C#7",
-    78: "D7",
-    79: "D#7",
-    80: "E7",
-    81: "F7",
-    82: "F#7",
-    83: "G7",
-    84: "G#7",
-    85: "A7",
-    86: "A#7",
-    87: "B7",
-    88: "C8"
-}
-
-print(piano_dict)
-# END: 8f7e4d3b9w3d
-
-# for value in piano_dict get the number to the 
-
-for key, value in piano_dict.items():
-    
-    note = value[:-1]
-    octave = value[-1]
-
-    print(octave + note)
