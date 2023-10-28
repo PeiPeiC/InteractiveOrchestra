@@ -1,12 +1,12 @@
 import os
 import pygame
 
-def play_violin_sound1(filename):
+def play_violin_sound1(filename, instrument):
     # Initialize Pygame mixer
     pygame.mixer.init()
 
     # Get the path to the "violin" directory
-    violin_dir = os.path.join(os.path.dirname(__file__), "violin")
+    violin_dir = os.path.join(os.path.dirname(__file__), instrument)
 
     # Get the path to the sound file
     sound_file = os.path.join(violin_dir, filename)
@@ -22,6 +22,8 @@ def play_violin_sound1(filename):
 
     # Clean up Pygame mixer
     pygame.mixer.quit()
+
+#play_violin_sound1("40-4C.wav", "Violin")
 
 
 
