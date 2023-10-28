@@ -1,10 +1,14 @@
 <!DOCTYPE html>
+
 <html>
-<head>
-    <title>Home page</title>
-</head>
 <body>
-    <h1>Page One</h1>
-    <a href="{% url 'violin' %}">Violin</a>
+  <h1>Home Page</h1>
+  <button onclick="openCamera()">Violin</button>
+
+  <script>
+    function openCamera() {
+      var cameraWindow = window.open('{% url "hand_tracking_camera" %}', 'camera', 'width=640,height=480');
+    }
+  </script>
 </body>
 </html>
