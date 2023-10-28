@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!--        <!DOCTYPE html>
 {% load static %}
 <html>
 <body>
@@ -12,33 +12,51 @@
     }
   </script>
 </body>
-</html> -->
+</html>        -->
 
 <!DOCTYPE html>
 {% load static %}
+
 <html>
-<head>
-  <link rel="stylesheet" type="text/css" href="{% static 'css/halloween-theme.css' %}">
-</head>
-<body>
-  <div class="halloween-header">
-    <img src="{% static 'images/pumpkin.png' %}" alt="Pumpkin" class="pumpkin">
-    <h1 class="halloween-title">Spooky Halloween Page</h1>
-    <img src="{% static 'images/bat.png' %}" alt="Bat" class="bat">
-  </div>
-  
-  <div class="halloween-content">
-    <p>Welcome to our haunted Halloween page! Get ready for a spooktacular experience.</p>
-    <img src="{% static 'images/haunted-house.png' %}" alt="Haunted House" class="haunted-house">
-    <p>Click below to summon the violin...</p>
-    <button onclick="openCamera()" class="halloween-button">Summon the Violin</button>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/halloween-theme.css' %}" />
+    <title>Music Instruments</title>
+    <style>
+      body {
+        background-image: url('{% static "images/background.png" %}');
+        /* ... 其他CSS規則 ... */
+      }
+    </style>   
+  </head>
+  <body>
+    <div class="container">
+      <div class="wheel" id="wheel">
+        <!-- 以下為五個按鈕 -->
+        <button onclick="openCamera('piano')" class="halloween-button" id="piano"><img src="{% static 'images/piano.png' %}" alt="Piano" /></button>
+        <button onclick="openCamera('violin')" class="halloween-button" id="violin"><img src="{% static 'images/violin.png' %}" alt="Violin" /></button>
+        <button onclick="openCamera('minion')" class="halloween-button" id="minion"><img src="{% static 'images/minion.png' %}" alt="Minion" /></button>
+        <button onclick="openCamera('flute')" class="halloween-button" id="flute"><img src="{% static 'images/flute.png' %}" alt="Flute" /></button>
+        <button onclick="openCamera('drum')" class="halloween-button" id="drum"><img src="{% static 'images/drum.png' %}" alt="Drum" /></button>
 
-  <script>
-    function openCamera() {
-      var cameraWindow = window.open('{% url "hand_tracking_camera" %}', 'camera', 'width=640,height=480');
-    }
-  </script>
-</body>
+        <!-- 中心的箭頭（或Logo） -->
+        <div class="arrow">
+          <img src="{% static 'images/arrow.png' %}" alt="Arrow" />
+        </div>
+      </div>
+    </div>
+
+    {% comment %} <script src="{% static 'js/script.js' %}"></script>
+    <script>
+      document.querySelector('.wheel').addEventListener('mousemove', function (event) {
+        let rect = this.getBoundingClientRect()
+        let x = event.clientX - (rect.left + rect.width / 2)
+        let y = event.clientY - (rect.top + rect.height / 2)
+        let angle = Math.atan2(y, x) * (180 / Math.PI)
+        document.querySelector('.logo').style.transform = `rotate(${angle}deg)`
+      })
+    </script> {% endcomment %}
+  </body>
 </html>
-
