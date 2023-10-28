@@ -32,10 +32,7 @@ last_play_time = time.time()
 sound_thread = None  # Initialize sound_thread
 
 
-insrument = "Piano"
-
-scale = "Major pentatonic"
-
+insrument = "Drums"
 
 def sound_thread_func(note):
     play_violin_sound(note, insrument)
@@ -78,56 +75,56 @@ with mp_hands.Hands(min_detection_confidence=0.8, min_tracking_confidence=0.5) a
                             if y < h/2:
 
                                 if x < int(w/8):
-                                    a = scales[scale][0]
+                                    a = "Acoustic Tom Low 04.wav"
                                     sound_thread = threading.Thread(target=sound_thread_func, args=(a,))
                                     print(f"X: {x}, note: {a}")
                                     sound_thread.start()
                                     last_play_time = current_time
 
                                 elif int(w/8) <= x < int(w/8)*2:
-                                    b = scales[scale][1]
+                                    b = "Acoustic Mid Tom 17.wav"
                                     sound_thread = threading.Thread(target=sound_thread_func, args=(b,))
                                     print(f"X: {x}, note: {b}")
                                     sound_thread.start()
                                     last_play_time = current_time
                                 
                                 elif int(w/8)*2 <= x < int(w/8)*3:
-                                    b = scales[scale][2]
+                                    b = "Acoustic High Tom Brush 01.wav"
                                     sound_thread = threading.Thread(target=sound_thread_func, args=(b,))
                                     print(f"X: {x}, note: {b}")
                                     sound_thread.start()
                                     last_play_time = current_time
 
                                 elif int(w/8)*3 <= x < int(w/8)*4:
-                                    b = scales[scale][3]
+                                    b = "Acoustic Kick 25.wav"
                                     sound_thread = threading.Thread(target=sound_thread_func, args=(b,))
                                     print(f"X: {x}, note: {b}")
                                     sound_thread.start()
                                     last_play_time = current_time
                                 
                                 elif int(w/8)*4 <= x < int(w/8)*5:
-                                    b = scales[scale][4]
+                                    b = "Acoustic Open Hat 11.wav"
                                     sound_thread = threading.Thread(target=sound_thread_func, args=(b,))
                                     print(f"X: {x}, note: {b}")
                                     sound_thread.start()
                                     last_play_time = current_time
                                 
                                 elif int(w/8)*5 <= x < int(w/8)*6:
-                                    b = scales[scale][5]
+                                    b = "Acoustic Sticks 01.wav"
                                     sound_thread = threading.Thread(target=sound_thread_func, args=(b,))
                                     print(f"X: {x}, note: {b}")
                                     sound_thread.start()
                                     last_play_time = current_time
 
                                 elif int(w/8)*6 <= x < int(w/8)*7:
-                                    b = scales[scale][6]
+                                    b = "Acoustic Crash 06.wav"
                                     sound_thread = threading.Thread(target=sound_thread_func, args=(b,))
                                     print(f"X: {x}, note: {b}")
                                     sound_thread.start()
                                     last_play_time = current_time
 
                                 else:
-                                    b = scales[scale][7]
+                                    b = "Acoustic Snare Roll 06.wav"
                                     sound_thread = threading.Thread(target=sound_thread_func, args=(b,))
                                     print(f"X: {x}, note: {b}")
                                     sound_thread.start()

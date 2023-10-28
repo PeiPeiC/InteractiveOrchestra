@@ -14,5 +14,6 @@ def play_violin_sound(filename, instrument):
     # Play the sound file
     playsound.playsound(sound_file)
 
-play_violin_sound("40-4C.wav", "Violin")
+
+play_violin_sound("Acoustic Tom Low 04.wav", "Drums")
 
