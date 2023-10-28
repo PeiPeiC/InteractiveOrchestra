@@ -1,0 +1,44 @@
+<!-- <!DOCTYPE html>
+{% load static %}
+<html>
+<body>
+  <img src="{% static 'images/logoHalloween.png' %}" alt="Logo">
+  <h1>Home Page</h1>
+  <button onclick="openCamera()">Violin</button>
+
+  <script>
+    function openCamera() {
+      var cameraWindow = window.open('{% url "hand_tracking_camera" %}', 'camera', 'width=640,height=480');
+    }
+  </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/halloween-theme.css' %}">
+</head>
+<body>
+  <div class="halloween-header">
+    <img src="{% static 'images/pumpkin.png' %}" alt="Pumpkin" class="pumpkin">
+    <h1 class="halloween-title">Spooky Halloween Page</h1>
+    <img src="{% static 'images/bat.png' %}" alt="Bat" class="bat">
+  </div>
+  
+  <div class="halloween-content">
+    <p>Welcome to our haunted Halloween page! Get ready for a spooktacular experience.</p>
+    <img src="{% static 'images/haunted-house.png' %}" alt="Haunted House" class="haunted-house">
+    <p>Click below to summon the violin...</p>
+    <button onclick="openCamera()" class="halloween-button">Summon the Violin</button>
+  </div>
+
+  <script>
+    function openCamera() {
+      var cameraWindow = window.open('{% url "hand_tracking_camera" %}', 'camera', 'width=640,height=480');
+    }
+  </script>
+</body>
+</html>
+

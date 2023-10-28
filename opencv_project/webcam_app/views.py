@@ -12,23 +12,8 @@ def home(request):
 def violin(request):
     return render(request,'webcam_app/violin.html')
 
-# yourappname/views.py
-@gzip.gzip_page
-def hand_tracking_camera(request):
-    # Your OpenCV camera capture code here
-    camera = cv2.VideoCapture(0)
 
-    def generate():
-        while True:
-            success, frame = camera.read()
-            if not success:
-                break
-            _, buffer = cv2.imencode('.jpg', frame)
-            frame_bytes = buffer.tobytes()
-            yield (b'--frame\r\n'
-                   b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n')
-
-    return StreamingHttpResponse(generate(), content_type="multipart/x-mixed-replace;boundary=frame")
+# Define a global variable to control the camera feed
 
 
 mp_drawing = mp.solutions.drawing_utils
