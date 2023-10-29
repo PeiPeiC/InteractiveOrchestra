@@ -15,5 +15,3 @@ def play_violin_sound(filename, instrument):
     playsound.playsound(sound_file)
 
 
-play_violin_sound("Acoustic Tom Low 04.wav", "Drums")
-
