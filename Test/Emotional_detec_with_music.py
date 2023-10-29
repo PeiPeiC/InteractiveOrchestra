@@ -62,7 +62,7 @@ time.sleep(1)
 
 emotion_to_scale = {"angry": "BlackPees", "happy": "Major",
                      "neutral": "Major Pentatonic",
-                       "sad": "Minor", "surprise": "Major",
+                       "sad": "Minor", "surprise": "Blackkeys",
                          "fear": "Blues", "disgust": "Minor"}
 
 scale = emotion_to_scale[predicted_emotion]
