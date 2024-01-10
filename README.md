@@ -1,8 +1,4 @@
 # Interactive Orchestra
-Certainly! Here's an updated version of the repository overview with the added details about the Interactive Orchestra App's achievement and sections for the winner certification and demo video:
-
----
-
 ## Overview
 
 Interactive Orchestra App is a unique collection of Python-based musical tools designed for real-time music creation and interaction using web camera input. The project, which emerged as the Winner of the Morgan Stanley Challenge at the UofG Tech Society Hackathon, skillfully blends advanced technology and creativity. 
